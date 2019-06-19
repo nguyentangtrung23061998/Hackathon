@@ -1,0 +1,128 @@
+<div id="dashboard-user">
+  <div class="row nopadding nomargin">
+    <div class="col-lg-3 col-sm-6 nopadding w-100 paddingright marginbottom">
+      <div class="container nomargin nopadding w-100 img-das">
+        <img src="../../../../../assets/img/studydasboard1.png" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text" data-toggle="modal" data-target="#myHistory" (click)="modalHackathon('hist')">L?ch S?</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 nopadding w-100 paddingright marginbottom">
+      <div class="container nomargin nopadding w-100 img-das">
+        <img src="../../../../../assets/img/studydashboard2.jpg" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text" data-toggle="modal" data-target="#myHistory" (click)="modalHackathon('info')">Gi?i Thi?u
+            Cu?c Thi</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 nopadding w-100 paddingright marginbottom">
+      <div class="container nomargin nopadding w-100 img-das">
+        <img src="../../../../../assets/img/stdudydashboard3.jpg" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text" data-toggle="modal" data-target="#myHistory" (click)="modalHackathon('req')">Yêu C?u</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 nopadding w-100 paddingright marginbottom">
+      <div class="container nomargin nopadding w-100 img-das">
+        <img src="../../../../../assets/img/studydashboard4.jpg" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text" data-toggle="modal" data-target="#myHistory" (click)="modalHackathon('thele')">Th? L?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Infmation-->
+<div class="modal fade " id="myHistory">
+  <div class="modal-dialog modal-width">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header txtModal">
+        <h4 class="modal-title txtTitleUsser" *ngIf="dipslayHis">
+          L?ch S? Cu?c Thi
+        </h4>
+        <h4 class="modal-title txtTitleUsser" *ngIf="dipslayInfo">
+          Gi?i Thi?u Cu?c Thi
+        </h4>
+        <h4 class="modal-title txtTitleUsser" *ngIf="displayReq">
+          Yêu C?u
+        </h4>
+        <h4 class="modal-title txtTitleUsser" *ngIf="displayTheLe">
+          Th? L?
+        </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body txtModal">
+        <p style="word-break: break-word;font-size: 15px;color: #4B26DE;" *ngIf="dipslayHis">Nam1460,Lê Tu Thành lên
+          ngôi, l?y hi?u là Lê Thánh Tông,…
+          <br>
+          Hai nam sau,cu?c thi Huong d?u tiên du?i th?i ông du?c t? ch?c m?c dích tìm
+          ra nhân tài cho d?t nu?c. Công cu?c t? ch?c thi du?c chu?n b? n?a nam t? vi?c tuy?n
+          ch?n giám thi, d?a di?m d?n khâu t? ch?c ra d? thi h?t s?c v?t v?. Không nh?ng th?,
+          nh?ng thí sinh ngoài ôn t?p ki?n th?c, h?c t?p ki nang ngoài ra còn ph?i chu?n b? khan
+          gói lên du?ng d?n d?a di?m thi t? s?m, th?m chí có nh?ng thí sinh ph?i l?n l?i t?
+          nh?ng vùng B?c Chiêm(nay là Qu?ng Nam, Qu?ng Ngãi, Bình Ð?nh) ra Kinh Thành
+          d? tham d? kì thi mong du?c vinh quy bái t?. Nam thi ?y, s? lu?ng thí sinh tham d?
+          r?t ít,nhi?u nhân tài không tham gia ?ng thi. M?t ngày tr?i xanh mây tr?ng, gió nh?,
+          mây bay,Vua H?ng Ð?c quy?t d?nh vi hành vào mi?n d?t phía Nam d?y hoang so, ông
+          ngh? chân t?i m?t vùng d?t xa xôi, t?i nhà m?t ngu?i dân d?a phuong, trong nhà có m?t
+          thu sinh áo tr?ng tên Luong Th? Vinh,guong m?t sáng s?a; Java, Python, Cshap,…
+          d?u thu?c làu làu,th? nhung vì di?u ki?ngia dình cung nhu d?a di?m di?n ra kì thi
+          Huong xa xôi cách tr?, Vinh không th? dem tài nang c?a mình c?ng hi?n cho d?t nu?c
+        </p>
+        <p style="word-break: break-word;font-size: 15px;color: #4B26DE;" *ngIf="dipslayInfo">
+          Trong vai trò là m?t bá quan c?a tri?u dình, b?n hãy giúp nhà vua xây d?ng m?t
+          trang web d? cho dân chúng c? nu?c cót h? tham d? cu?c thi Huong vô cùng quan
+          tr?ng này. Nhà vua sau khi xem qua t?u chuong v? ph?n m?m, r?t nóng lòng mu?n
+          bi?t nó s? nhu th? nào,bèn yêu c?u các bá quantrong tri?u, sau khi làm xong ph?n giao
+          di?n ph?i dâng lên cho mình ki?m tra. N?u vua ung thu?n m?i du?c ti?p t?c di?n bi?n
+          ph?n ch?c nang c?a ph?n m?m.
+          <br>
+          Trang web này s? thay cho cu?c thi Huong hi?n t?i, hình th?c thi tr?c nghi?m
+          v?i 4 dáp án A, B, C, D. Ngu?i dân mu?n d? thi s? dang kí tài kho?n, sau dó dang nh?p
+          vào trang web cu?c thi.S? có nhi?u d? thi, thí sinh ch? du?c ch?n m?t d? d? ti?n hành
+          ph?n thi c?a mình.D?ng câu h?i và câu tr? l?i trong d? thi có th? ? d?ng ch?, âm
+          thanh, phim, hình ?nh. Sau ph?n làm bài thi,thí sinh có th? xem l?i k?t qu? thi các
+          mình, các câu dúng,các câu sai và dáp án dúng, t?ng th?i gian làm bài.B?ng vàng s?
+          du?c hi?n th? công khai, minh b?ch trên trang nh?t c?a cu?c thi, ch?a danh sách các
+          thí sinh di?m cao nh?t dã du?c tri?u dình công nh?n và chu?n b? nh?n ch?c.
+        </p>
+        <p style="word-break: break-word;font-size: 15px;color: #4B26DE;" *ngIf="displayReq">
+          Ðúng Yêu C?u
+          <br>
+          Ðáp ?ng responsive trên t?t c? các thi?t b?
+          <br>
+          Giao di?n tr?c quan, d? ti?p c?n ngu?i dùng
+          <br>
+          SEO (k?t qu? d?a trên google…)
+          <br>
+          Sáng t?o
+          <br>
+          Th?i gian n?p bài (*)
+        </p>
+        <p style="word-break: break-word;font-size: 15px;color: #4B26DE;" *ngIf="displayTheLe">
+          Cu?c thi du?c chia thành 02 vòng khác nhau. <br>
+          Vòng 1 không gi?i h?n s? lu?ng d?i dang kí tham gia. Các d?i thi hoàn thành bài thi t?i nhà và n?p bài online
+          qua du?ng d?n Ban t? ch?c cung c?p. Ban giám kh?o s? ch?m d?a trên thang di?m 100. Ði?m c?a bài thi là trung
+          bình c?ng di?m c?a t?t c? các thành viên Ban giám kh?o. Ban t? ch?c s? ch?n 16 d?i có di?m cao nh?t d? tham d?
+          vòng 2.
+          <br>
+          Vòng 2 du?c t? ch?c theo hình th?c tr?c ti?p. Các d?i thi hoàn thành bài thi t?i d?a di?m thi do Ban t? ch?c
+          chu?n b?. Sau khi hoàn thành, các d?i s? thuy?t trình tru?c Ban giám kh?o trong th?i gian t?i da là 05 phút d?
+          giám kh?o ch?m di?m tr?c ti?p.
+        </p>
+        <!-- <div class="buttonUser text-center pb-2">
+            <button mat-raised-button color="primary" type="button">Thêm Thí Sinh</button>
+        </div> -->
+      </div>
+
+    </div>
+  </div>
+</div>

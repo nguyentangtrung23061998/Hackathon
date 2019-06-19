@@ -1,0 +1,39 @@
+<div id="loginUser">
+  <div class="loginUserContainer">
+    <div class="loginPanel">
+      <form action="#" [formGroup]="formLoginUser" (ngSubmit)="login()">
+        <div class="loginUserTitle">
+          <img src="../../assets/img/goplay.jpg" alt="">
+          <h3>Đăng nhập</h3>
+        </div>
+        <div class="loginUserContent">
+          <mat-form-field class="w-100 ">
+            <input matInput placeholder="Tên tài khoản" formControlName="username" required>
+          </mat-form-field>
+          <mat-form-field class="w-100 italicText">
+            <input matInput placeholder="Mật khẩu" class="italicText" formControlName="password" required>
+          </mat-form-field>
+        </div>
+        <div class="loginUserButton w-100">
+          <button mat-raised-button color="primary" class="w-100">Đăng nhập</button>
+          <!-- <p class="text-center w-100 " > <a  class="lead mt-3 text-primary" style="font-size: 16px;
+			font-weight: 500;" (click)="signIn()">Đăng ký tài khoản</a> </p> -->
+          <div class="w-100">
+			  <div class="row">
+				  <div class="col-md-12">
+					<p class="w-100 text-center" > <a  class="lead mt-3 text-primary" style="font-size: 16px;
+						font-weight: 500;" (click)="signIn()">Đăng ký tài khoản</a> </p>
+				  </div>
+				  <div class="col-md-12">
+					<div class="w-100 text-center next-admin text-primary" style="font-size: 16px;
+						font-weight: 500;">
+						<mat-slide-toggle [routerLink]="['/admin/login']">Admin</mat-slide-toggle>
+					</div>
+				  </div>
+			  </div>
+		  </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

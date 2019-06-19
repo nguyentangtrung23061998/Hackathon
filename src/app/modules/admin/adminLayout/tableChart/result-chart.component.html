@@ -1,0 +1,99 @@
+<div class="title-list">
+  <h3>Kết Quả Thí Sinh</h3>
+</div>
+<!--Tìm kiếm + select đề-->
+<div class="row" style="margin-bottom: 15px">
+  <div class="col-md-6">
+    <!-- <input class="form-control" type="text" name="search" placeholder="Tìm Kiếm..."> -->
+    <mat-form-field class="w-100">
+      <input matInput type="text" name="search" placeholder="Tìm Kiếm...">
+    </mat-form-field>
+  </div>
+  <div class="col-md-6 text-right ">
+    <!--<button class="btn-action add" data-toggle="modal" data-target="#addSV"><i class="fa fa-plus"></i></button>-->
+    <mat-form-field class="w-100">
+      <mat-label>Thí Sinh Thi Đề</mat-label>
+      <mat-select> 
+        <mat-option value="Đề 1">
+          Đề 1
+        </mat-option>
+        <mat-option  value="Đề 2">
+          Đề 2
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table mat-table [dataSource]="dataSource" class="w-100">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="STT">
+    <th mat-header-cell *matHeaderCellDef> # </th>
+    <td mat-cell *matCellDef="let element;let i = index"> {{i+1}} </td>
+  </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="HoTen">
+      <th mat-header-cell *matHeaderCellDef> Họ Tên </th>
+      <td mat-cell *matCellDef="let element"> {{element.HoTen}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="DeThi">
+      <th mat-header-cell *matHeaderCellDef class="text-right">Đề Thi</th>
+      <td mat-cell *matCellDef="let element" class="text-right"> {{element.DeThi}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="TongDiem">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Tổng Điểm </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.TongDiem}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="XepLoai">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Xếp Loại </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.XepLoai}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayColumnResult"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayColumnResult;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<!--Add modal-->
+<div class="modal fade " id="addStudent">
+    <div class="modal-dialog modal-width">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header txtModal">
+          <h4 class="modal-title txtTitleUsser">
+            Đăng ký thí sinh
+          </h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body txtModal">
+          <mat-form-field class="w-100">
+            <input matInput placeholder="Họ tên">
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <input matInput placeholder="Số điện thoại">
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <input matInput placeholder="Email">
+          </mat-form-field>
+          <div class="buttonUser text-center pb-2">
+              <button mat-raised-button color="primary" type="button">Thêm Thí Sinh</button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

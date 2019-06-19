@@ -1,0 +1,56 @@
+#user-header{
+    width: 100%;
+    height: 100%;
+ 
+    .user-header-left{
+        font-size: 2rem;
+        color: #ffffff;
+        font-weight: 500;
+        font-family: cursive;
+        box-shadow: 1px 0px 16px #a1a1a1, 1px 1px 0px #a1a1a1;
+    }
+    .user-header-right{
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        color:#ffffff;
+        cursor: pointer;
+        span{
+            transition: all .3s;
+            &:hover{
+                color:	#FF8C00;
+            }
+        }
+        .profile{
+            transition: all .3s;
+           a{
+                text-decoration: none;
+                color:#ffffff;
+                &:hover{
+                    color:	#FF8C00;
+                }
+            }
+        }
+    }
+    .user-header-task{
+        width: 100%;
+        border-bottom: 3px solid #ffffff;
+        cursor: pointer;
+        .nav .nav-item > a{
+            cursor: pointer;
+            color:#ffffff;
+            &:hover{
+                color:#FF8C00;
+            }
+        }
+    }
+}
+.logo{
+    color:#FF8C00 !important;
+}
+.logo-noactive{
+    color:#ffffff;
+}
+.cursorP >a {
+    cursor: pointer;
+}

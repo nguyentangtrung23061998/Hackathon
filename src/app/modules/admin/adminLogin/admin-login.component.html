@@ -1,0 +1,38 @@
+<div id="loginAdmin">
+	<div class="loginAdminContainer">
+		<div class="loginAdminPanel">
+			<form action="#" [formGroup]="formLoginAdmin" (ngSubmit)="login()">
+				<div class="loginAdminTitle">
+					<img src="../../assets/img/goplay.jpg" alt="">
+					<h3>Quản Trị</h3>
+				</div>
+				<div class="loginAdminContent">
+					<mat-form-field class="w-100 ">
+						<input matInput placeholder="Tên tài khoản"  formControlName="username" required >
+					</mat-form-field>
+					<mat-form-field class="w-100 italicText">
+						<input matInput placeholder="Mật khẩu" class="italicText"  formControlName="password" required>
+					</mat-form-field>
+				</div>
+				<!-- <div class="loginAdminButton w-100">
+					<button mat-raised-button color="primary" class="w-100">Đăng nhập</button>
+				</div> -->
+				<div class="w-100">
+					<div class="row">
+						<div class="col-md-6">
+						  <!-- <p class="w-100" > <a  class="lead mt-3 text-primary" style="font-size: 16px;
+							  font-weight: 500; cursor: pointer;" >Đăng Nhập</a> </p> -->
+							  <button mat-raised-button color="primary" class="w-100" type="submit">Đăng nhập</button>
+						</div>
+						<div class="col-md-6">
+						  <div class="w-100 text-right next-user text-primary" style="font-size: 16px;
+							  font-weight: 500;">
+							  <mat-slide-toggle [routerLink]="['/']">User</mat-slide-toggle>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

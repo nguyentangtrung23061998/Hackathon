@@ -1,0 +1,26 @@
+<div id="user-header">
+  <div class="d-flex justify-content-between" style="padding-bottom: 1.5%;
+  border-bottom: 3px solid #ffffff;">
+    <div class="lead user-header-left">HACKATHON</div>
+    <div class="user-header-right">
+      <span class="pr-3 profile"><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></span>
+      <span (click)="signOut()"><i class="fa fa-sign-out" aria-hidden="true"></i></span>
+    </div>
+  </div>
+  <div class="user-header-task">
+    <ul class="nav">
+      <li class="nav-item cursorP">
+        <a [class]="activeIconID=='DashboardId' ? 'nav-link logo' : 'nav-link logo-noactive'" [routerLink]="['/']" >Trang Chủ</a>
+      </li>
+      <li class="nav-item cursorP">
+        <a [class]="activeIconID=='ExamId' ? 'nav-link logo' : 'nav-link logo-noactive'" [routerLink]="['/exam']">Vào Thi</a>
+      </li>
+      <li class="nav-item cursorP">
+        <a [class]="activeIconID=='ResultId' ? 'nav-link logo' : 'nav-link logo-noactive'" [routerLink]="['/result']">Kết Quả Thi</a>
+      </li>
+      <li class="nav-item cursorP">
+        <a [class]="activeIconID=='ChartId' ? 'nav-link logo' : 'nav-link logo-noactive'" [routerLink]="['/chart']">Thống Kê</a>
+      </li>
+    </ul>
+  </div>
+</div>

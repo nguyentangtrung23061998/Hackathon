@@ -1,0 +1,18 @@
+#result{
+    width: 100%;
+    margin-top: 2%;
+    .resultCode{
+        background:#ff5555;
+        border: none;
+        outline: none;
+    }
+}
+.result-hidden{
+    
+}
+/*responsive*/
+@media (max-width:601px){
+    .result-hidden{
+        display: none;
+    }
+}

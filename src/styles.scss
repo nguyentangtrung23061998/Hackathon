@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/*--------------------*/
+.nopadding{
+    padding: 0%;
+  
+}
+.nomargin{
+    margin: 0% ;
+}
+.paddingright{
+    padding-right: 15px !important;
+}
+.marginbottom{
+    margin-bottom: 15px !important;
+}
+// .mat-form-field-appearance-legacy .mat-form-field-underline {
+//     background-color: rgb(255, 255, 255) !important;
+// }
+.managerStudent > button{
+    height: 30px;
+    width: 30px;
+    border: none;
+    outline: none;
+    .mat-button-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/*use material*/
+.cdk-overlay-container{
+    z-index: 1400 !important;
+  }

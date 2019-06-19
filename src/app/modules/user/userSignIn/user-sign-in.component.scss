@@ -1,0 +1,76 @@
+#signInUser {
+  height: 100vh;
+
+  .signInUserContainer {
+    top: 15%;
+    left: 50%;
+    position: absolute;
+    width: 350px;
+    padding: 20px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+    .signInPanel {
+      width: 100%;
+
+      form {
+        width: 100%;
+
+        .signInUserPanelTitle {
+          width: 100%;
+          text-align: center;
+
+          img {
+            width: 50px;
+            padding: 15px 0;
+          }
+
+          h3 {
+            margin: 0%;
+          }
+        }
+
+        .signInUserContent {
+          width: 100%;
+        }
+
+        .signInUserButton {
+          p {
+            margin: 0;
+            margin-top: 10px;
+            padding: 0;
+
+            a {
+              text-decoration: none;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+input::placeholder {
+  font-style: italic !important;
+}
+
+/*Responsive*/
+@media (min-width:401px) and (max-width:601px) {
+  .signInUserContainer {
+    top: 1% !important;
+    width: 97% !important;
+    height: 100% !important;
+  }
+
+}
+
+@media (max-width:401px) {
+  .signInUserContainer {
+    position: inherit !important;
+    width: 100% !important;
+    transform: none !important;
+    height: 100%;
+  }
+}

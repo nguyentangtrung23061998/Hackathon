@@ -1,0 +1,77 @@
+<div style="    min-height: 100vh;
+margin-top: 30px;
+padding: 20px;
+background-color: #E5E5E5;
+transition: margin-left 0.3s ease;">
+
+  <div id="header_admin">
+    <div class="header_admin_logo">
+      <h5>Admin</h5>
+    </div>
+    <div class="header_admin_manager d-flex justify-content-between">
+
+      <div class="toggle-menu d-flex align-items-center">
+        <button mat-mini-fab data-toggle="sidebar" class="clickToggle" (click)="clickSideNav()">
+          <i class="fa fa-bars" aria-hidden="true"></i></button>
+      </div>
+      <div class="header_admin_logo_v2">
+        <h5>Admin</h5>
+      </div>
+      <div class="menu-func h-100">
+        <div class="menu-func-content h-100 d-flex align-items-center">
+          <!-- <span class="pr-3 profile">
+            <a href="#" style="color:#ffffff; font-size:150%"><i class="fa fa-user" aria-hidden="true"></i></a></span> -->
+          <span style="color:#ffffff; font-size:150%;cursor: pointer;" (click)="signOut()"><i class="fa fa-sign-out"
+              aria-hidden="true"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+  <div id="sidebar_admin" class="extendToggle sidebarResponsive">
+    <div class="app-sidebar-user">
+      <img src="../../../../assets/img/admin.jpg" class="app-sidebar__user-avatar" alt="">
+      <div>
+        <p class="app-sidebar__user-name">Admin</p>
+        <p class="app-sidebar__user-designation">Nguyễn Tăng Trung</p>
+      </div>
+    </div>
+    <ul class="app-menu">
+      <li class="treeview active" [routerLink]="['/admin/student']">
+        <a class="app-menu__item">
+          <!-- <mat-icon _ngcontent-c1="" class="app-menu__icon mat-icon material-icons" role="img" aria-hidden="true">
+            av_timer</mat-icon> -->
+          <mat-icon>group</mat-icon>
+          <span _ngcontent-c1="" class="app-menu__label">Quản Lí Thí Sinh</span>
+        </a>
+      </li>
+      <li class="treeview" [routerLink]="['/admin/listexam']">
+        <a class="app-menu__item">
+          <!-- <mat-icon _ngcontent-c1="" class="app-menu__icon mat-icon material-icons" role="img" aria-hidden="true">
+            crop_7_5</mat-icon> -->
+          <mat-icon>book</mat-icon>
+          <span _ngcontent-c1="" class="app-menu__label">Quản Lí Đề Thi</span>
+        </a>
+      </li>
+      <li class="treeview" [routerLink]="['/admin/listquestion']">
+        <a class="app-menu__item">
+          <!-- <mat-icon _ngcontent-c1="" class="app-menu__icon mat-icon material-icons" role="img" aria-hidden="true">
+            view_comfy</mat-icon> -->
+          <mat-icon>view_quilt</mat-icon>
+          <span _ngcontent-c1="" class="app-menu__label">Quản Lí Câu Hỏi</span>
+        </a>
+      </li>
+      <li class="treeview" [routerLink]="['/admin/chart']">
+        <a class="app-menu__item">
+          <mat-icon _ngcontent-c1="" class="app-menu__icon mat-icon material-icons" role="img" aria-hidden="true">
+            view_comfy</mat-icon>
+          <span _ngcontent-c1="" class="app-menu__label">Bảng Kết Quả</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="app-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

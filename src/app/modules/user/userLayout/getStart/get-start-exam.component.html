@@ -1,0 +1,138 @@
+<div id="exam">
+  <div class="title-exam" *ngIf="contentTextStartExam">
+    <p class="textTitle">Bạn đã sẵn sàng để làm bài kiểm tra?</p>
+    <div class="title-span text-center">
+      <p style="padding:0; margin:0">Vui lòng nhấn "Nộp bài" nộp bài của bạn.</p>
+      <p style="padding:0; margin:0">Nhấn nút "câu hỏi" để tùy chọn câu hỏi của bạn.</p>
+      <p style="padding:0; margin:0">Khi bắt đầu làm bài bạn có 10 phút làm bài.</p>
+    </div>
+    <div class="button-exam w-100 text-center mt-3">
+      <button mat-flat-button style="border: none;outline: none;background: 
+            #5e4d4d;color: #fff;font-size: 1rem;" (click)="getExam()">
+        Sẵn Sàng
+      </button>
+    </div>
+  </div>
+  <div class="content-exam" *ngIf="displayQuestion">
+    <div class="w-100 time" *ngIf="displayTimer">
+      <p class="lead time-hour">{{CountDownMinute < 10 ? '0' + CountDownMinute : CountDownMinute}} : {{CountDownSecond < 10 ? '0' + CountDownSecond : CountDownSecond}}</p>
+    </div>
+    <ng-container *ngFor="let option of dataQuizQuestion; let i=index;">
+      <p>{{option.Id}}/{{lengthQuiz}}</p>
+    </ng-container>
+    <div class="progress-bar w-75 m-auto" style="margin-bottom: 20px !important;">
+      <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+        [bufferValue]="bufferValue">
+      </mat-progress-bar>
+    </div>
+    <div class="question-exam">
+      <ng-container *ngFor="let option of dataQuizQuestion; let i=index;">
+        <h3 class="mt-4 lead text-white" style="font-weight:500" *ngIf="option.LoaiCauHoi === 'Text'">
+          Câu hỏi {{option.Id}} : {{option.Content}}
+        </h3>
+        <div class="mt-4 lead text-white" style="font-weight:500" *ngIf="option.LoaiCauHoi==='HinhAnh'">
+          Câu hỏi {{option.Id}} : Hãy xem hình ảnh trên. Ý nghĩa hình ảnh này?
+          <br>
+          <img [src]="option.Content" width="500px" height="200px" alt="">
+        </div>
+        <div class="mt-4 lead text-white" style="font-weight:500" *ngIf="option.LoaiCauHoi==='Video'">
+          Câu hỏi {{option.Id}} : Hãy xem đoạn video. Ý nghĩa video này?
+          <br>
+          <video width="500px" height="200px" controls>
+            <source [src]="option.Content" > 
+          </video>
+        </div>
+        <div class="mt-4 lead text-white" style="font-weight:500" *ngIf="option.LoaiCauHoi==='AmThanh'">
+          Câu hỏi {{option.Id}} : Hãy nghe đoạn audio. Ý chính là gì?
+          <br>
+          <audio controls style="border:none;outline:none">
+            <source [src]="option.Content"  type="audio/ogg">
+            <!-- <source src="horse.mp3" type="audio/mpeg">
+          Your browser does not support the audio element. -->
+          </audio>
+        </div>
+      </ng-container>
+      <div class="question-reply mt-4">
+        <div class="row w-75 m-auto">
+          <!-- <div class="col-md-6 mb-3">
+            <button mat-flat-button class="activeButton btnChooseReply">A.java</button>
+          </div> -->
+          <ng-container *ngFor="let option of dataQuizQuestion; let i=index;">
+            <div class="col-md-6 mb-3">
+              <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'Text'"
+                (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauA}}</button>
+                <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'HinhAnh'"
+                (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauA}}</button>
+                <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'Video'"
+                (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauA}}</button>
+                <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'AmThanh'"
+                (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauA}}</button>
+            </div>
+            <div class="col-md-6 mb-3">
+              <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'Text'"
+                (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauB}}</button>
+                <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'HinhAnh'"
+                (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauB}}</button>
+                <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'Video'"
+                (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauB}}</button>
+                <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'AmThanh'"
+                (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauB}}</button>
+            </div>
+            <div class="col-md-6 mb-3">
+              <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'Text'"
+              (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauC}}</button>
+              <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'HinhAnh'"
+              (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauC}}</button>
+              <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'Video'"
+              (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauC}}</button>
+              <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'AmThanh'"
+              (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauC}}</button>
+            </div>
+            <div class="col-md-6 mb-3">
+              <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'Text'"
+                (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauD}}</button>
+                <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'HinhAnh'"
+                (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauD}}</button>
+                <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'Video'"
+                (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauD}}</button>
+                <button mat-flat-button class="activeButton btnChooseReply" *ngIf="option.LoaiCauHoi === 'AmThanh'"
+                (click)="answer(option.CauA,option.DapAn,option.Id)">{{option.CauD}}</button>
+            </div>
+          </ng-container>
+
+        </div>
+      </div>
+    </div>
+    <div class="listQuestionButton mt-3 text-left ">
+      <div class="w-75 m-auto" style="padding-left:15px; padding-right:15px;">
+        <p>Tất cả các câu hỏi: </p>
+        <ng-container *ngFor="let option of quizService; let i=index;">
+          <button mat-flat-button class="mr-2" (click)="chooseQuestion(option.Id)">{{option.Id}}</button>
+        </ng-container>
+      </div>
+    </div>
+    <div class="submitQuestion">
+        <button mat-raised-button class="sroreButton" (click)="submit()">Nộp bài</button>
+    </div>
+    <!-- <div class="response-exam w-100 mt-3">
+      <button mat-flat-button class="btnRespone mr-2">
+        Xong
+      </button>
+      <button mat-flat-button class="btnRespone">
+        Tiếp
+      </button>
+    </div> -->
+  </div>
+  <div class="scoreExam" *ngIf="displayScore">
+    <div class="score-title">
+      <h3 class="nopadding nomargin">
+        Cuộc Thi Hoàn Thành
+      </h3>
+      <p class="nopadding nomargin">Tổng Điểm: {{totalCount*10}}%</p>
+      <span>Số câu đúng: {{totalCount}}/{{quizService.length}}</span>
+    </div>
+    <div class="scrore-dashboard">
+        <button mat-raised-button class="sroreButton" [routerLink]="['/']">Quay về trang chủ</button>
+    </div>
+  </div>
+</div>
